@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="styling/style.css">
+    <title>Batman</title>
+    <link rel="shortcut icon" type="image/png" href="styling/batman.png">
+</head>
+  <body onload="REDIPS.drag.init()">
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-expand btn btn-dark" href="#" onclick="clearBoard()">Clear Board</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Algorithm
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" onclick="choose(1)">DFS</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="choose(2)">BFS</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Maze
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" onclick="maze1()">odd walls</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="maze2()">Complicated</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  speed
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" onclick="speed(20)">fast</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="speed(50)">average</a></li>                  
+                  <li><a class="dropdown-item" href="#" onclick="speed(100)">slow</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <span class="navbar">To place Wall press spacebar press again to stop</span>
+        </div>
+      </nav>
+      <div id="redips-drag">
+        <table>
+          <tbody id="board">
+
+          </tbody>
+        </table>
+      </div>
+    <script src="javascript/redips-drag-min.js"></script>
+    <script src="javascript/board.JS"></script>
+    <script src="javascript/maze.js"></script>
+    <script src="javascript/DFS.js"></script>
+    <script src="javascript/BFS.js"></script>
+    <script src="javascript/Algorithms.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    </body>
+</html>

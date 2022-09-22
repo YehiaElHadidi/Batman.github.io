@@ -1,0 +1,92 @@
+.unvisited{
+    border: 1px solid rgb(175, 216, 248);
+    background-color:white
+}
+.visited{
+  border: 1px solid rgb(15, 15, 15);
+  background-color:rgb(8, 66, 50);
+}
+#board {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#board td{
+  /*border: 1px solid rgb(175, 216, 248);*/
+  width: 25px;
+  height: 25px;
+}
+img{
+  width: 30px;
+  height: 25px;
+}
+.check{
+  background-color: rgb(13, 218, 218);
+  animation-name: checkcircle;
+  animation-duration: 2s;
+}
+@keyframes checkcircle {
+  from {
+    background-color: rgb(174, 221, 221);
+    border-radius: 50%;
+  }
+  to {
+  background-color: rgb(13, 218, 218)ack;
+    border-radius: 0%;
+  }
+  
+}
+.shortestpath{
+  background-color: gold;
+  animation-name: runcircle;
+  animation-duration: 2s;
+}
+@keyframes runcircle {
+  from {
+    background-color: rgb(213, 221, 174);
+    border-radius: 50%;
+  }
+  to {
+    background-color: gold;
+    border-radius: 0%;
+  }
+  
+}
+.start{
+  background-image: url("IAmBatman.gif");
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+}
+.end{
+  background-image: url('bat signal.jpg');
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+}
+
+
+
+.wall{
+  background-color: black;
+  animation-name: wallcircle;
+  animation-duration: 2s;
+
+}
+
+@keyframes wallcircle {
+  from {
+    background-color: gray;
+    border-radius: 50%;
+  }
+  to {
+  background-color: black;
+    border-radius: 0%;
+  }
+} 
+
+
+.run{
+  background-image: url("IAmBatman.gif");
+  background-size: cover;
+
+}
