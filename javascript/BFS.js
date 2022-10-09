@@ -3,6 +3,7 @@ async function BFS( i,j,shortestpath,string)
 {
     let q = [{f : i, s : j}];
     shortestpath[i][j] = {i,j};
+    let fst = q[0];
     while(q.length != 0){
         var node = q[0];
         
@@ -23,7 +24,10 @@ async function BFS( i,j,shortestpath,string)
                 q.push({f:adjx,s:adjy});
             }
         }
-        await timer(TIME);
+        if(node == fst){
+            await timer(TIME*4);
+            fst = q[q.length-1];
+        }
 
     }
     restBoard();
