@@ -24,13 +24,13 @@ async function choose(n){
         await timer(1000);
         if(!vis[second.i][second.j]){
             checkDFS();
-            await timer(1000);
-            await timer(checked.length*TIME);
+            await timer(500);
+            await timer(checked.length*(TIME+2));
             restBoard();
         }
     }
     if(n == 2){
-        BFS(first.i*1,first.j*1,shortestpath, string);
+        BFS(first.i*1,first.j*1,shortestpath);
     }
 }
 
@@ -44,7 +44,7 @@ function getID(node){
     if(temp2[0] == '-'){
         temp2 = temp2.substring(temp2.length-1);
     }
-    const ID = {i: temp1,j:temp2}
+    const ID = {i: temp1 * 1,j:temp2 * 1}
     return ID;
 }
 var TIME = 20;

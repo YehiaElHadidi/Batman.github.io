@@ -1,4 +1,3 @@
-
 let board = document.getElementById("board");
 for(let i = 0; i < window.screen.height-300; i = i + 25){
     const tr = board.insertRow();
@@ -27,8 +26,7 @@ for(let i = 0; i < window.screen.height-300; i = i + 25){
 function clearBoard(){
     for(let i = 0; i < ROW; i++){
         for(let j = 0; j < COL; j++){
-            var td = document.getElementById(i + "-" + j);
-            td.className = "unvisited";
+            var td = document.getElementById(i + "-" + j).className = "unvisited";
         }
     }
 }
@@ -38,8 +36,7 @@ const timer = ms => new Promise(res => setTimeout(res, ms))
 
 async function checkDFS(DFSpath){
     for(let i = 1; i < checked.length; i++){
-        var td = document.getElementById(checked[i].f + "-" +  checked[i].s);
-        td.className = "check border";
+        var td = document.getElementById(checked[i].f + "-" +  checked[i].s).className = "check border";
         await timer(TIME); // then the created Promise can be awaited
     }
     runBatmanDFS(DFSpath);

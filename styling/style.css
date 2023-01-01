@@ -65,9 +65,26 @@ img{
 }
 
 
+.mazeGen{
+  background-color: white;
+  animation-name: mazecircle;
+  animation-duration: 2s;
+  border: 1px solid rgb(175, 216, 248);
+}
+
+@keyframes mazecircle {
+  from {
+    background-color : rgb(12, 53, 71);
+    border-radius: 50%;
+  }
+  to {
+    background-color: white;
+    border-radius: 0%;
+  }
+}
 
 .wall{
-  background-color: black;
+  background-color: rgb(12, 53, 71);
   animation-name: wallcircle;
   animation-duration: 2s;
 
@@ -79,7 +96,7 @@ img{
     border-radius: 50%;
   }
   to {
-  background-color: black;
+    background-color: rgb(12, 53, 71);
     border-radius: 0%;
   }
 } 

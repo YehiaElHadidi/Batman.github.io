@@ -10,9 +10,6 @@
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-expand btn btn-dark" href="#" onclick="clearBoard()">Clear Board</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
@@ -26,17 +23,7 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Maze
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" onclick="maze1()">Maze1</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="maze2()">Maze2</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
+            <a class="navbar-expand btn btn-light" href="#" onclick="generateMaze()">Generate A Maze</a>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   speed
@@ -50,8 +37,9 @@
                 </ul>
               </li>
             </ul>
-
+            
           </div>
+          
         </div>
       </nav>
       <nav class="navbar bg-light">
