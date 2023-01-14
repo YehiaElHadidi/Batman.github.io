@@ -1,6 +1,6 @@
 var second;
-var ROW = 23;
-var COL = 62;
+var ROW;
+var COL;
 var checked=[{
     f:1,
     S:2

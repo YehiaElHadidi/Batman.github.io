@@ -1,15 +1,26 @@
 let board = document.getElementById("board");
-for(let i = 0; i < window.screen.height-300; i = i + 25){
+console.log(window.innerHeight);
+console.log(window.innerWidth);
+ROW = Math.ceil(window.innerHeight/25) - 3;
+COL = Math.ceil(window.innerWidth/25);
+console.log(ROW);
+console.log(COL);
+let sr = (Math.floor(Math.random()* ROW));
+let sc = (Math.floor(Math.random()* COL));
+
+let er = (Math.floor(Math.random()* ROW));
+let ec = (Math.floor(Math.random()* COL));
+for(let i = 0; i < ROW; i++){
     const tr = board.insertRow();
-    for(let j = 0; j < window.screen.width; j = j+25){
+    for(let j = 0; j < COL; j ++){
         const td = tr.insertCell();
-        if(i == 100 && j == 400){
+        if(i == sr && j == sc){
             const div = document.createElement("div");
             div.className = "redips-drag start";
             div.id = "start";
             td.appendChild(div);
         }
-        else if(i == 400 && j == 1000){
+        else if(i == er && j == ec){
             const div = document.createElement("div");
             div.className = "redips-drag end";
             div.id = "end";
@@ -17,7 +28,7 @@ for(let i = 0; i < window.screen.height-300; i = i + 25){
         }
         td.className = "unvisited";
         td.setAttribute("onmouseover","placeWall(this.id)") 
-        td.setAttribute('id',(i/25) + "-" + (j/25));
+        td.setAttribute('id',i + "-" + j);
         tr.appendChild(td);
     }
     board.appendChild(tr);

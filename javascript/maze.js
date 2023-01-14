@@ -20,7 +20,7 @@ async function generateMaze(){
     firsthalfmaze();
     secondhalfmaze();
     
-    
+    await timer((mazepath.length/2)*30);
     for(let i = 0; i < ROW; i++){
         for(let j = 0; j < COL; j++){
             if(document.getElementById(i + "-" + j).className == "mazeGen")
@@ -53,15 +53,11 @@ function DFSMaze(i, j){
         return;
     }
     var cnt = 0;
-    var dc = [];
-    for (var z = 0; z < 4; z++) {
-        dc[z] = DCmaze[z];
-    } 
     
     
     for (var z = 0; z < 4; z++) {
-        var adjx = i + dc[z].i;
-        var adjy = j + dc[z].j;
+        var adjx = i + DCmaze[z].i;
+        var adjy = j + DCmaze[z].j;
         if(!outofbound(adjx,adjy))
             continue;
 
@@ -77,8 +73,8 @@ function DFSMaze(i, j){
 
     for (var z = x; z < x+4; z++) {
         
-        var adjx = i + dc[z%4].i;
-        var adjy = j + dc[z%4].j;
+        var adjx = i + DCmaze[z%4].i;
+        var adjy = j + DCmaze[z%4].j;
         
         DFSMaze(adjx,adjy);
     }    
