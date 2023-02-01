@@ -15,38 +15,14 @@ async function generateMaze(){
     document.getElementById("end").parentNode.className = "unvisited";
     
     DFSMaze(Math.floor(Math.random()* ROW) , Math.floor(Math.random()* COL));
-    await timer(100);
 
-    firsthalfmaze();
-    secondhalfmaze();
-    
-    await timer((mazepath.length/2)*30);
-    for(let i = 0; i < ROW; i++){
-        for(let j = 0; j < COL; j++){
-            if(document.getElementById(i + "-" + j).className == "mazeGen")
-                document.getElementById(i + "-" + j).className = "unvisited";
-        }
-    }
-    
-}
-async function firsthalfmaze(){
-    for(let z = 0; z < mazepath.length/2; z++){
-        document.getElementById(mazepath[z].i + "-" + mazepath[z].j).className = "mazeGen"
-        await timer(20);
-    }
-}
-/*for(let z = mazepath.length-1 ; z >= (mazepath.length/2*1); z--){
-        document.getElementById(mazepath[z].i + "-" + mazepath[z].j).className = "mazeGen"
-        await timer(20);
-    }*/ 
+    await buildMaze();
 
-async function secondhalfmaze(){
+    // not working correctly
+    resetMazeTounvisted();
     
-    for(let z = Math.ceil(mazepath.length/2) ; z < mazepath.length; z++){
-        document.getElementById(mazepath[z].i + "-" + mazepath[z].j).className = "mazeGen"
-        await timer(20);
-    }
 }
+
 
 function DFSMaze(i, j){
     if(!isValidDFSMaze(i,j)){

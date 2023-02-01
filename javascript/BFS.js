@@ -30,6 +30,7 @@ async function BFS( i,j,shortestpath)
             fst = q[q.length-1];
         }
     }
+    await timer(1000);
     restBoard();
 }
 

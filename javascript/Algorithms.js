@@ -21,11 +21,9 @@ async function choose(n){
     var string = "";
     if(n == 1){
         DFS(first.i*1,first.j*1,vis, string);
-        await timer(1000);
         if(!vis[second.i][second.j]){
-            checkDFS();
-            await timer(500);
-            await timer(checked.length*(TIME+2));
+            await checkDFS();
+            await timer(1000);
             restBoard();
         }
     }

@@ -52,9 +52,8 @@ async function checkDFS(DFSpath){
     }
     runBatmanDFS(DFSpath);
 }
-var TT = 0;var T = 0;
 async function runBatmanDFS(path){
-    T = 1;
+
     let i = 0;
     var idd = "";
 
@@ -63,7 +62,6 @@ async function runBatmanDFS(path){
         i++;
     }
     i++;
-    TT++
     var old = document.getElementById(idd);
     old.className = "shortestpath run";
     while(i < path.length){
@@ -72,7 +70,7 @@ async function runBatmanDFS(path){
             id += path[i];
             i++;
         }
-        i++;TT++;
+        i++;
         var td = document.getElementById(id);
         td.className = "shortestpath run";
         old.className = "shortestpath border";
@@ -90,7 +88,6 @@ async function restBoard(){
         var td = document.getElementById(checked[i].f + "-" +  checked[i].s);
         td.className = "unvisited";
     }
-    TT = 0; T = 0;
 }
 
 var spacebarpressed = false;
@@ -140,6 +137,40 @@ async function runBatmanBFS(arr){
      TT = arr.length-1; 
      await timer(1000);
      restBoard();  
+}
+
+async function buildMaze(){
+    firsthalfmaze();
+    secondhalfmaze();
+}
+
+async function firsthalfmaze(){
+    for(let z = 0; z < mazepath.length/2; z++){
+        document.getElementById(mazepath[z].i + "-" + mazepath[z].j).className = "mazeGen"
+        await timer(20);
+    }
+}
+/*for(let z = mazepath.length-1 ; z >= (mazepath.length/2*1); z--){
+        document.getElementById(mazepath[z].i + "-" + mazepath[z].j).className = "mazeGen"
+        await timer(20);
+    }*/ 
+
+async function secondhalfmaze(){
+    
+    for(let z = Math.ceil(mazepath.length/2) ; z < mazepath.length; z++){
+        document.getElementById(mazepath[z].i + "-" + mazepath[z].j).className = "mazeGen"
+        await timer(20);
+    }
+}
+
+async function resetMazeTounvisted(){
+    console.log("sssss");
+    for(let i = 0; i < ROW; i++){
+        for(let j = 0; j < COL; j++){
+            if(document.getElementById(i + "-" + j).className == "mazeGen")
+                document.getElementById(i + "-" + j).className = "unvisited";
+        }
+    }
 }
 
 
